@@ -25,28 +25,17 @@
     display:inline-block; background:#E8A33D; color:#3A2600; text-decoration:none;
     font-weight:800; font-size:14.5px; padding:13px 30px; border-radius:12px;
   }
-  .spinner {
-    width:22px; height:22px; border:3px solid rgba(255,255,255,.3); border-top-color:#E8A33D;
-    border-radius:50%; margin:0 auto 16px; animation:spin .8s linear infinite;
-  }
-  @keyframes spin { to { transform:rotate(360deg); } }
 </style>
 </head>
 <body>
 <div class="wrap">
   <img class="logo" src="icon.png" alt="Recibos">
-  <div class="spinner"></div>
   <h1>Recibos de Gastos</h1>
   <p>FOTHESALUD S.A.S. / SISOLE'S S.A.S.</p>
   <a class="btn" id="btnAbrir" href="https://script.google.com/macros/s/AKfycbzuhRz5Ho3BbSEXguCAN1himOqY9sPCL6BgFdwZyOtgLVQ8jKKC62J-yfRp_OWCHrAP7A/exec">Abrir app</a>
 </div>
-<script>
-  // Redirección automática de página completa (no iframe), para que
-  // google.script.run funcione exactamente igual que si abrieras el
-  // link de Apps Script directamente.
-  setTimeout(function(){
-    window.location.href = document.getElementById('btnAbrir').href;
-  }, 400);
-</script>
+<!-- Sin redirección automática a propósito: si saltara sola, Safari
+     terminaría guardando en la pantalla de inicio la página de destino
+     (con el ícono genérico) en vez de esta pantalla de bienvenida. -->
 </body>
 </html>
